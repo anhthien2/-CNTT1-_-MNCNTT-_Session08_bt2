@@ -1,0 +1,19 @@
+Phần 1: Phân tích
+An bị nhầm tư duy cơ bản về tìm kiếm:
+
+Get-ChildItem là lệnh để tìm TÊN FILE, không phải tìm NỘI DUNG bên trong file. 
+
+
+Select-String mới là lệnh để tìm NỘI DUNG BÊN TRONG file, nó giống như grep bên Linux vậy. Muốn lọc lỗi trong log thì phải dùng lệnh này.
+
+
+Khác nhau ngắn gọn:
+Get-ChildItem = tìm file
+Select-String = tìm chữ trong file
+ Phần 2: Hoàn thiện
+
+câu lệnh chuẩn trên **PowerShell** để lọc từ khóa `error`
+Select-String -Path access.log -Pattern "error"
+
+hiển thị kèm số thứ tự dòng để kỹ sư dễ tra cứu.
+Select-String -Path access.log -Pattern "404|error"
